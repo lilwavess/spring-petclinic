@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Stage 3') {
+      steps {
+        sh 'ansible-playbook -i hosts deploy.yml'
+      }
+    }
+
   }
 }
