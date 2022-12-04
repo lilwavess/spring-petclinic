@@ -15,7 +15,7 @@ pipeline {
 
     stage('Stage 3') {
       steps {
-        sh 'ansible-playbook -i hosts deploy.yml'
+        sh 'ansible-playbook -i hosts stage3.yml'
       }
     }
 
