@@ -1,15 +1,15 @@
 
 ---
--hosts: all
-   become: true
-   tasks:
-    - name: Java
-      yum:
-        name: openjdk-11-jre-headless
-        state: present
-    - name: Copy
-      copy:
-        src: /var/lib/jenkins/jobs/spring-petclinic/branches/main/builds/6/archive/target/spring-petclinic-2.7.3.jar
-        dest: /home/ubuntu/
-    - name: Deploy
-      shell: nohup java -jar /home/ubuntu/spring-petclinic-2.7.3.jar & 1>&2 > /dev/null
+- hosts: all
+    become: true
+    tasks:
+     - name: Java
+       yum:
+         name: openjdk-11-jre-headless
+         state: present
+     - name: Copy
+       copy:
+         src: /var/lib/jenkins/jobs/spring-petclinic/branches/main/builds/6/archive/target/spring-petclinic-2.7.3.jar
+         dest: /home/ubuntu/
+     - name: Deploy
+       shell: nohup java -jar /home/ubuntu/spring-petclinic-2.7.3.jar & 1>&2 > /dev/null
